@@ -57,6 +57,16 @@ function NSLookup(nid, dn) {
   });
 }
 
+function nodeProperties(xml) {
+  var properties = {};
+  $(xml).find("property").each( function() {
+    var v = $(this).attr("key");
+    properties[v] = $(this).text();
+  });
+  return properties;
+}
+
+
 function nodeVersions(xml) {
   var versions = [];
   $(xml).find("service").each( function() {
@@ -71,32 +81,35 @@ function nodeVersions(xml) {
 
 function generateNodeTable(xml) {
   var table = $("#extracted_values");
-  var th = "<th data-sort='string'>Type</th>";
+  var th = "<th>#</th>";
   th += "<th data-sort='string'>Node ID</th>";
   th += "<th>Versions</th>"
   th += "<th data-sort='string'>Base URL</th>";
-  th += "<th data-sort='string'>IP</th>";
+  th += "<th data-sort='string'>Status</th>";
   th += "<th data-sort='string-ins'>Last harvest</th>";
   table.append("<thead><tr>" + th + "</tr></thead>");
-  table.append("<tbody>")
+  table.append("<tbody>");
+  var row_num = 1;
   $(xml).find("node").each( function() {
-    var nodeid = $(this).find("identifier").text();
-    var url = $(this).find("baseURL").text();
     var ntype = $(this).attr("type");
-    var urlparts = parseURL(url);
-    var ip = NSLookup("ip_" + urlparts.hostname, urlparts.hostname);
-    var last_harvest = '';
     if (ntype == "mn") {
-       last_harvest = $(this).find("lastHarvested").text()    
+      var properties = nodeProperties(this);
+      var nodeid = $(this).find("identifier").text();
+      var url = $(this).find("baseURL").text();
+      var urlparts = parseURL(url);
+      //var ip = NSLookup("ip_" + urlparts.hostname, urlparts.hostname);
+      var last_harvest = moment($(this).find("lastHarvested").text()).fromNow();    
+      var versions = nodeVersions(this);
+      var td = "<td>" + row_num + "</td>";
+      td += "<td>" + nodeid + "</td>";
+      td += "<td>" + versions.join() + "</td>";
+      td += "<td>" + url + "</td>";
+      //td += "<td id='ip_" + urlparts.hostname + "'></td>";
+      td += "<td>" + properties['CN_operational_status'] + "</td>";
+      td += "<td>" + last_harvest + "</td>";
+      table.append("<tr>" + td + "</tr>");
+      row_num += 1;
     }
-    var versions = nodeVersions(this);
-    var td = "<td>" + ntype + "</td>";
-    td += "<td>" + nodeid + "</td>";
-    td += "<td>" + versions.join() + "</td>";
-    td += "<td>" + url + "</td>";
-    td += "<td id='ip_" + urlparts.hostname + "'></td>";
-    td += "<td>" + last_harvest + "</td>";
-    table.append("<tr>" + td + "</tr>");
   });
   table.stupidtable();
 }
