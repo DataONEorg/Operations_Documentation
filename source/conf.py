@@ -140,7 +140,7 @@ plantweb_defaults = {
 # -- sphinx-bootstrap-theme customization
 html_logo = "dataone-logo-color-small_24.jpg"
 html_theme_options = {
-  
+   'bootstrap_version': "3",
 }
 
 
