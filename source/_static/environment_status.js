@@ -85,8 +85,8 @@ function generateNodeTable(xml) {
   th += "<th data-sort='string'>Node ID</th>";
   th += "<th>Versions</th>"
   th += "<th data-sort='string'>Base URL</th>";
-  th += "<th data-sort='string'>Status</th>";
-  th += "<th data-sort='string-ins'>Last harvest</th>";
+  //th += "<th data-sort='string'>Status</th>";
+  //th += "<th data-sort='string-ins'>Last harvest</th>";
   table.append("<thead><tr>" + th + "</tr></thead>");
   table.append("<tbody>");
   var row_num = 1;
@@ -104,9 +104,9 @@ function generateNodeTable(xml) {
       td += "<td>" + nodeid + "</td>";
       td += "<td>" + versions.join() + "</td>";
       td += "<td>" + url + "</td>";
-      //td += "<td id='ip_" + urlparts.hostname + "'></td>";
-      td += "<td>" + properties['CN_operational_status'] + "</td>";
-      td += "<td>" + last_harvest + "</td>";
+      ////td += "<td id='ip_" + urlparts.hostname + "'></td>";
+      //td += "<td>" + properties['CN_operational_status'] + "</td>";
+      //td += "<td>" + last_harvest + "</td>";
       table.append("<tr>" + td + "</tr>");
       row_num += 1;
     }
