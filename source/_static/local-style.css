@@ -52,3 +52,9 @@ h4, h5, h6 {
   font-size: 0.8rem;
   font-family: "PT Sans", Helvetica, Arial, sans-serif;
 }
+
+.bs-sidenav {
+  /*background-color: white;
+  border-right: 1px dotted #a0a0a0;
+  */
+}

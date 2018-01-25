@@ -22,6 +22,7 @@ Contents
    CN/index
    MN/index
    PROJ/index
+   DEV/index
    Status/index
 
 
@@ -30,6 +31,7 @@ Indices and Tables
 
 * :ref:`genindex`
 * :ref:`search`
+* :doc:`glossary`
 
 
 .. _DataONE: https://dataone.org/

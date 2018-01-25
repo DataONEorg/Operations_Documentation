@@ -1,6 +1,8 @@
 Coordinating Nodes
 ==================
 
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
@@ -9,4 +11,6 @@ Coordinating Nodes
    letsencrypt
    searchui
    readonly
+   cn_kernelupgrade
+   diagnosticapi
 

@@ -10,6 +10,11 @@
 
 <script src="../_static/environment_status.js">
 </script>
+<script src="../_static/environment_nodes.js">
+</script>
+
+<div id="reports">
+</div>
 
 <table id="extracted_values" class="table">
 </table>
@@ -20,6 +25,9 @@ var LOG_LEVEL = "info";
 $( document ).ready(function() {
   log.setLevel(LOG_LEVEL, false);
   getXML("https://cn.dataone.org/cn/v2/node", generateNodeTable);
+  generateStatusView("reports");
+  reloadAllEnvironmentStatus();
+  //$("#refresh").click(reloadAllEnvironmentStatus);
 });
 
 </script>

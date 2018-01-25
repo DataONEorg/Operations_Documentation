@@ -17,11 +17,33 @@ MetacatUI       `github.com/NCEAS/metacatui <https://github.com/NCEAS/metacatui/
 =============== ============= 
 
 
+Member Node Issue Tracking
+--------------------------
+
+Member Node (MN) related issues are tracked in the `Member Nodes`_ project in Redmine. Each MN is 
+assigned to a `MNDeployment` issue type and tasks associated with the MN are attached to the MNDeployment
+
+Member Nodes transition through several stages during their lifetime (Figure 1).
+
+.. graph::
+   :align: left
+
+   digraph MN_states {
+     rankdir=LR;
+     node [shape=rectangle];
+     Plan -> Develop;
+     Develop -> Test;
+     Test -> Operate;
+     Operate -> Deprecate;
+     Operate -> Operate [label="Upgrade"];
+   }
+
+
+
+.. _Member Nodes: https://redmine.dataone.org/projects/mns
+
 Redmine.dataone.org
 -------------------
-
-Authentication at redmine.dataone.org is 
-
 
 Redmine is currently (2018-01-02) setup on an Ubuntu 16.04 server running at
 UNM. The installation uses the redmine distribution available from the
