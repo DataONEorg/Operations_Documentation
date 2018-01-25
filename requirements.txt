@@ -2,4 +2,3 @@
 sphinx_bootstrap_theme
 plantweb
 sphinxcontrib-bibtex
-ablog
