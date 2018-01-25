@@ -26,7 +26,7 @@ import sphinx_bootstrap_theme
 from recommonmark.parser import CommonMarkParser
 
 #used for tag support
-import ablog
+#import ablog
 
 # -- General configuration ------------------------------------------------
 
@@ -45,7 +45,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'plantweb.directive',
     'sphinxcontrib.bibtex',
-    'ablog',    
+    #'ablog',    
     ]
 
 # Support for Markdown as a source type
@@ -55,7 +55,7 @@ source_parsers = {
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
-templates_path.append(ablog.get_html_templates_path())
+#templates_path.append(ablog.get_html_templates_path())
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
