@@ -1,6 +1,9 @@
 # Sphinx build artifacts
 dov/build/
 
+# Sublime text stuff
+*.sublime*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
