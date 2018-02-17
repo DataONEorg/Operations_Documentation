@@ -6,14 +6,13 @@ Software Choices
 ----------------
 
 
-Deployment
-----------
-
 .. toctree::
    :maxdepth: 2
-   :glob:
 
-   deployment/*
+   mn_software
+   mn_testing
+   mn_production
+
 
 Operation
 ---------

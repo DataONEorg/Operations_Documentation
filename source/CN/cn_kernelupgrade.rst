@@ -1,7 +1,7 @@
 Kernel Upgrade
 ==============
 
-A kernel upgrade on a Coordinating Node requires a system restart. Restarting a CN requires that the environment is placed in :term:`read-only mode` to help avoid content inconsistency between the CNs operating within an :term:`Environment`. Furthermore, restarting the Primary CN in an Environment requires that the primary be switched to another CN so the read only service (resolution, retrieval, and search) remain available to clients.
+A kernel upgrade on a Coordinating Node requires a system restart. Restarting a CN requires that the environment is placed in :term:`read-only mode` to help avoid content inconsistency between the CNs operating within an :term:`Environment`. Restarting the :term:`Primary CN` in an Environment requires that the :term:`Environment DNS` be switched to another CN so the read only service (resolution, retrieval, and search) remain available to clients. The DNS switch is required in the production environment and is optional in the various test environments.
 
 
 .. uml::

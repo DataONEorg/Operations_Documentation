@@ -7,6 +7,7 @@ Project Resources
    :caption: Contents:
 
    communications
-   metrics
+   documents
    issuetracking
+   metrics
    vmsetup
