@@ -45,6 +45,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'plantweb.directive',
     'sphinxcontrib.bibtex',
+    'sphinx.ext.graphviz',
     #'ablog',    
     ]
 
@@ -164,14 +165,16 @@ htmlhelp_basename = 'DataONE Operations Documentation'
 
 # -- Options for LaTeX output ---------------------------------------------
 
+latex_engine = 'pdflatex'
+
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
-    # 'papersize': 'letterpaper',
+    'papersize': 'letterpaper',
 
     # The font size ('10pt', '11pt' or '12pt').
     #
-    # 'pointsize': '10pt',
+    'pointsize': '10pt',
 
     # Additional stuff for the LaTeX preamble.
     #
@@ -181,6 +184,8 @@ latex_elements = {
     #
     # 'figure_align': 'htbp',
 }
+
+plantuml_latext_output_format = "pdf"
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,

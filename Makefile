@@ -15,7 +15,7 @@ help:
 .PHONY: help Makefile
 
 live:
-	sphinx-autobuild -B -b html $(SOURCEDIR) "$(BUILDDIR)/html" 
+	sphinx-autobuild -B -p 8001 -b html $(SOURCEDIR) "$(BUILDDIR)/html" 
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
