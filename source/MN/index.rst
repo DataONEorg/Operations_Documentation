@@ -1,23 +1,11 @@
 Member Nodes
 ============
 
-
-Software Choices
-----------------
-
-
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
-   mn_software
    mn_testing
+   mn_upcoming
    mn_production
 
-
-Operation
----------
-
-
-Deprecation
------------
 

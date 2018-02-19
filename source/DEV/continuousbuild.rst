@@ -1,3 +1,4 @@
+def run(self, edit):
 Continuous Build System
 =======================
 
