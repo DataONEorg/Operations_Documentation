@@ -19,9 +19,9 @@ Contents
    :maxdepth: 2
    :glob:
 
-   CN/index
-   MN/index
    PROJ/index
+   MN/index
+   CN/index
    DEV/index
    Status/index
 
