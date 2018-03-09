@@ -8,7 +8,7 @@ A contributor is a subject that is identified as an author of a dataset.
 
 Authors can be:
 
-* The subject that added the content to DataONE. This is expressed in the system metadata as the ``submitter``. However, the submitter may not be the author or creator of the content. For example, a data manager who had not involvement in the creation of the dataset may have uploaded the content.
+* The subject that added the content to DataONE. This is expressed in the system metadata as the ``submitter``. However, the submitter may not be the author or creator of the content. For example, a data manager who had no involvement in the creation of the dataset may have uploaded the content.
 
 * The authors identified in the science metadata associated with the dataset. The DataONE indexing service extracts this information from the metadata and populates the ``author`` and related fields of the search index. 
 
@@ -42,7 +42,7 @@ As of this writing, the number of unique ``submitters`` is::
 Authorship Contributors
 -----------------------
 
-Authorship information is expressed in several fields in the solr index:
+Authorship information is expressed in several fields in the `solr index <http://indexer-documentation.readthedocs.io/en/latest/generated/solr_schema.html>`_:
 
 ======================== ========
 Field                    Count
