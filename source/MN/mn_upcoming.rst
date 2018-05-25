@@ -1,6 +1,7 @@
-Managing Display Upcoming Nodes
-===============================
+Managing Display of Upcoming Nodes
+==================================
 
+Upcoming Member Nodes are optionally added to the `upcoming Member Nodes`_ list
 
 
 
@@ -66,3 +67,7 @@ The process of registering a node will add it to the production node list report
     stop
 
 **Figure 2.** Procedure for listing a Member Node as upcoming when it is registered with the production Coordinating Nodes.
+
+
+
+

@@ -1,8 +1,15 @@
 Metrics
 =======
 
-Computing the Number of Contributors
-------------------------------------
+Amount of Content
+-----------------
+
+
+ 
+
+
+Number of Contributors
+----------------------
 
 A contributor is a subject that is identified as an author of a dataset.
 
@@ -14,7 +21,7 @@ Authors can be:
 
 
 Submission Contributors
------------------------
+.......................
 
 Submission contributors is expressed as a single system metadata property which is indexed to the ``submitter`` field.
 
@@ -40,7 +47,7 @@ As of this writing, the number of unique ``submitters`` is::
 
 
 Authorship Contributors
------------------------
+.......................
 
 Authorship information is expressed in several fields in the `solr index <http://indexer-documentation.readthedocs.io/en/latest/generated/solr_schema.html>`_:
 

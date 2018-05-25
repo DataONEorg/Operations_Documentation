@@ -13,4 +13,5 @@ Coordinating Nodes
    readonly
    cn_kernelupgrade
    diagnosticapi
+   reindex
 
