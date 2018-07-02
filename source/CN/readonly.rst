@@ -95,7 +95,7 @@ be stopped::
   sudo service d1-processing stop
 
 
-Exiting readonly mode
+Exiting read only mode
 ---------------------
 
 Exiting read only mode requires ensuring that the service control properties are
