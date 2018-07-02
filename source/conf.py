@@ -18,15 +18,7 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
-
-import sphinx_bootstrap_theme
-
 from recommonmark.parser import CommonMarkParser
-
-#used for tag support
-#import ablog
 
 # -- General configuration ------------------------------------------------
 
@@ -44,9 +36,8 @@ extensions = [
     'sphinx.ext.ifconfig',
     'sphinx.ext.viewcode',
     'plantweb.directive',
-    'sphinxcontrib.bibtex',
+    #'sphinxcontrib.bibtex',
     'sphinx.ext.graphviz',
-    #'ablog',    
     ]
 
 # Support for Markdown as a source type
@@ -56,7 +47,6 @@ source_parsers = {
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
-#templates_path.append(ablog.get_html_templates_path())
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
@@ -94,7 +84,7 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This patterns also effect to html_static_path and html_extra_path
-exclude_patterns = []
+exclude_patterns = ["MN/**", ]
 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
@@ -108,14 +98,12 @@ todo_include_todos = True
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'bootstrap'
-html_theme_path = sphinx_bootstrap_theme.get_html_theme_path()
+html_theme = 'sphinx_rtd_theme'
+html_theme_path = ["_themes"]
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#
-# html_theme_options = {}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -129,16 +117,12 @@ html_static_path = ['_static']
 # refs: http://alabaster.readthedocs.io/en/latest/installation.html#sidebars
 html_sidebars = {
     '**': [
-        # 'relations.html',  # needs 'show_related': True theme option to display
-        #'searchbox.html',
-        #'tagcloud.html',
+        'about.html',
+        'navigation.html',
+        'relations.html',
+        'searchbox.html',
     ]
 }
-
-
-def setup(app):
-  app.add_stylesheet("local-style.css")
-
 
 # -- PlantWeb configuration
 plantweb_defaults = {
@@ -147,10 +131,22 @@ plantweb_defaults = {
 
 # -- sphinx-bootstrap-theme customization
 html_logo = "dataone-logo-color-small_24.jpg"
-html_theme_options = {
-   'bootstrap_version': "3",
-}
 
+html_theme_options = {
+    'canonical_url': '',
+    'analytics_id': '',
+    'logo_only': False,
+    'display_version': True,
+    'prev_next_buttons_location': 'bottom',
+    'style_external_links': False,
+    'vcs_pageview_mode': '',
+    # Toc options
+    'collapse_navigation': True,
+    'sticky_navigation': True,
+    'navigation_depth': 4,
+    'includehidden': True,
+    'titles_only': False
+}
 
 # -- Plantuml Configuration -----------------------------------------------
 
