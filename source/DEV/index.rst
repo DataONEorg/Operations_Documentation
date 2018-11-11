@@ -8,3 +8,4 @@ Development
    hostname
    packages
    continuousbuild
+   profiling

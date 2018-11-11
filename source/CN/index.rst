@@ -74,16 +74,22 @@ indexing CN may also be the primary CN.  All CNs in an environment have ``ldap``
 ``postgres``, ``apache``, ``zookeeper``, ``solr``, and ``tomcat7`` running on 
 them.
 
-
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Operations:
+
+   readonly
+   restart_services
+   restart
+   reindex
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Topics:
 
    configuration
-   letsencrypt
    searchui
-   readonly
-   cn_kernelupgrade
+   letsencrypt
    diagnosticapi
-   reindex
 

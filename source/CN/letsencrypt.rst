@@ -1,6 +1,16 @@
-LetsEncrypt Certificates
-========================
+Certificates
+============
 
+.. TODO:: add general certificate information
+
+Client Certificate
+------------------
+
+.. TODO:: add client cert info
+
+
+Server Certificate
+------------------
 
 See also [[Connectivity and Certificates|CN_connectivity]]
 
@@ -34,6 +44,34 @@ For example, on ``cn-stage-ucsb-1.test.dataone.org``:
 
   environment.hosts=cn-stage-ucsb-1.test.dataone.org cn-stage-unm-1.test.dataone.org cn-stage-orc-1.test.dataone.org
   cn.rsyncuser=rsync_user
+
+Create Account for ``rsyncuser``
+--------------------------------
+
+::
+
+  sudo adduser ${RUSER} --disabled-password
+  sudo su - ${RUSER}
+  mkdir .ssh
+  chmod 0700 .ssh
+  cd .ssh
+  ssh-keygen -N "" -f id_rsa
+  cp id_rsa.pub authorized_keys
+  chmod 0600 *
+  cd ~
+  mkdir bin
+  nano bin/rsync-wrapper.sh
+    ...
+  chmod u+x bin/rsync-wrapper.sh
+
+``rsync-wrapper.sh``::
+
+  #!/bin/bash
+
+  LOG="/home/rsync_user/actions.log"
+  echo "$(date) " $@ >> ${LOG}
+  /usr/bin/sudo /usr/bin/rsync $@
+
 
 Prepare for Verification
 ------------------------
@@ -204,13 +242,17 @@ Symbolic links may be used to refer to the actual certificate location. Replace 
   PROPERTIES="/etc/dataone/node.properties"
   THIS_ENVIRONMENT=$(grep "^cn.router.hostname=" ${PROPERTIES} | cut -d'=' -f2)
   CERTS="/etc/letsencrypt/live/${THIS_ENVIRONMENT}"
-  sudo mv /var/lib/postgresql/9.3/main/server.crt "/var/lib/postgresql/9.3/main/server.crt.$(date +%Y%m%d)"
-  sudo mv /var/lib/postgresql/9.3/main/server.key "/var/lib/postgresql/9.3/main/server.key.$(date +%Y%m%d)"
-  sudo ln -s "${CERTS}/cert.pem" /var/lib/postgresql/9.3/main/server.crt
-  sudo ln -s "${CERTS}/privkey.pem" /var/lib/postgresql/9.3/main/server.key
+  sudo mv /var/lib/postgresql/9.3/server.crt "/var/lib/postgresql/9.3/server.crt.$(date +%Y%m%d)"
+  sudo mv /var/lib/postgresql/9.3/server.key "/var/lib/postgresql/9.3/server.key.$(date +%Y%m%d)"
+  sudo ln -s "${CERTS}/cert.pem" /var/lib/postgresql/9.3/server.crt
+  sudo ln -s "${CERTS}/privkey.pem" /var/lib/postgresql/9.3/server.key
 
 The linked files will survive a refresh of the certificates, so this only needs to be done once.
 
+
+cn.server.publiccert.filename=/etc/letsencrypt/live/cn-dev-2.test.dataone.org/cert.pem
+cn.rsyncuser=rsync_user
+environment.hosts=cn-stage-ucsb-2.test.dataone.org cn-stage-unm-2.test.dataone.org
 
 Configure the DataONE Portal Application
 ----------------------------------------

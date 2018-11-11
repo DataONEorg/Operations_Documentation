@@ -25,10 +25,9 @@ assigned to a `MNDeployment` issue type and tasks associated with the MN are att
 
 Member Nodes transition through several stages during their lifetime (Figure 1).
 
-.. graph::
+.. digraph:: MN_states
    :align: left
 
-   digraph MN_states {
      rankdir=LR;
      node [shape=rectangle];
      Plan -> Develop;
@@ -36,8 +35,6 @@ Member Nodes transition through several stages during their lifetime (Figure 1).
      Test -> Operate;
      Operate -> Deprecate;
      Operate -> Operate [label="Upgrade"];
-   }
-
 
 
 .. _Member Nodes: https://redmine.dataone.org/projects/mns

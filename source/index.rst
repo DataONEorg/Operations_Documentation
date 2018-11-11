@@ -24,14 +24,13 @@ Contents
    CN/index
    DEV/index
    Status/index
+   glossary
 
 
 Indices and Tables
 ------------------
 
 * :ref:`genindex`
-* :ref:`search`
-* :doc:`glossary`
 
 
 .. _DataONE: https://dataone.org/

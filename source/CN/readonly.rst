@@ -96,7 +96,7 @@ be stopped::
 
 
 Exiting read only mode
----------------------
+----------------------
 
 Exiting read only mode requires ensuring that the service control properties are
 set to ``TRUE`` then starting the ``d1-processing`` service::

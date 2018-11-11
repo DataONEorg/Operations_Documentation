@@ -1,4 +1,3 @@
-def run(self, edit):
 Continuous Build System
 =======================
 
@@ -70,9 +69,9 @@ Backup Jenkins Configurations
   --exclude="svnexternals.txt" \
   ${HUDSON_HOME} ${B_DEST}/backup/
 
-jobs/*/cobertura
-jobs/*/javadoc
-jobs/*/htmlreports
-jobs/*/ncover
-jobs/*/modules
+  jobs/*/cobertura
+  jobs/*/javadoc
+  jobs/*/htmlreports
+  jobs/*/ncover
+  jobs/*/modules
 

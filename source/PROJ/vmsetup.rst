@@ -1,6 +1,8 @@
 Virtual Machine Setup
 =====================
 
+cn.server.publiccert.filename=/etc/letsencrypt/live/cn-stage-2.test.dataone.org/cert.pem
+environment.hosts=cn-stage-2.test.dataone.org cn-stage-unm-2.test.dataone.org
 
 Kernel Purging
 --------------
@@ -9,6 +11,24 @@ Kernel Purging
 
   #!/bin/bash
   /usr/local/bin/purge_old_kernels.py -q
+
+Ensure to ``chmod a+x /etc/cron.daily/purge-old-kernels``.
+
+s
+Use Xenial Kernel
+-----------------
+
+Due to:
+ 
+ https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1787127
+
+it was necessary to upgrade many servers to use the 4.x kernel version.
+
+::
+
+  sudo apt-get install linux-generic-lts-xenial
+
+then restart to pick up the new kernel.
 
 
 LVM Resize
