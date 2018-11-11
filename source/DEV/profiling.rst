@@ -18,6 +18,12 @@ hierarchy of calls needed to service an operation. Hierarchy is shown in the
 vertical stack. Horizontal placement has no significance as output is 
 aplhabetically ordered.
 
+The async_profiler_ is much easier to use than honest_profiler, however 
+it doesn't work on the UCSB systems because of the shared kernel virtualization 
+there. 
+
+Insead, used honest_profiler as follows.
+
 (note the following process was hacked together one Friday afternoon - there's 
 lots of improvements to the process that can be made, but this is the basic 
 process followed.)
@@ -154,3 +160,4 @@ The process to generate a profile is then:
 
 .. _JProfiler: https://www.ej-technologies.com/products/jprofiler/overview.html
 .. _Flamegraphs: http://www.brendangregg.com/FlameGraphs/cpuflamegraphs.html
+.. _async_profiler: https://github.com/jvm-profiling-tools/async-profiler
