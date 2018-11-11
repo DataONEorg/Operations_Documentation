@@ -18,6 +18,10 @@ hierarchy of calls needed to service an operation. Hierarchy is shown in the
 vertical stack. Horizontal placement has no significance as output is 
 aplhabetically ordered.
 
+(note the following process was hacked together one Friday afternoon - there's 
+lots of improvements to the process that can be made, but this is the basic 
+process followed.)
+
 The following steps were followed to generate flamegraphs for CN operations 
 using cn-dev-ucsb-2.test.dataone.org as the example.
 
