@@ -11,3 +11,4 @@ Project Resources
    issuetracking
    metrics
    vmsetup
+   METRICS/metrics_contributors
