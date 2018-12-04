@@ -1,6 +1,13 @@
 Metrics
 =======
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   metrics_contributors
+   metrics_list_membernodes
+
 Amount of Content
 -----------------
 

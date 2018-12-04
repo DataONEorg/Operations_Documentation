@@ -39,6 +39,7 @@ extensions = [
     #'sphinxcontrib.bibtex',
     'sphinx.ext.graphviz',
     'nbsphinx',
+    'IPython.sphinxext.ipython_console_highlighting',
     ]
 
 # Support for Markdown as a source type
