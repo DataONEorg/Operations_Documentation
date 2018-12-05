@@ -1,4 +1,6 @@
 # Requirements for building sphinx-doc-template
+sphinx>=1.4
+ipykernel
 sphinx_bootstrap_theme
 plantweb
 sphinxcontrib-bibtex
