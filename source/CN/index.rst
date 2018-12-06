@@ -82,6 +82,7 @@ them.
    restart_services
    restart
    reindex
+   approve_mn
 
 
 .. toctree::

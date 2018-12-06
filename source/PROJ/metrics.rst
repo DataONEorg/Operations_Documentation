@@ -7,6 +7,7 @@ Metrics
 
    metrics_contributors
    metrics_list_membernodes
+   metrics_object_counts
 
 Amount of Content
 -----------------
