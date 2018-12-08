@@ -92,5 +92,5 @@ them.
    configuration
    searchui
    letsencrypt
-   diagnosticapi
+   diagnostic_api
 

@@ -4,7 +4,12 @@ Approving a Member Node
 Approving a Member Node involves setting the ``d1NodeApproved`` property for the 
 node entry in LDAP and triggering a refresh of the node list in ``d1-processing`` 
 so that the new node is subsequently processed for synchronization, 
-log-aggregation and replication.
+log-aggregation and replication. Updating LDAP alone will not trigger a refresh 
+of the node list. The ``dataone-approve-node`` tool will update the entry and 
+trigger the node list refresh.
+
+Procedure
+---------
 
 The approval process is performed after the MN has registered in the environment.
 
@@ -37,4 +42,9 @@ To approve a MN:
 
   There may be an ERROR message complaining of "No certificate installed in expected location: /tmp/x509up_u0". This can be safely ignored.
 
-  
+Sources
+-------
+
+See: https://repository.dataone.org/software/cicore/trunk/cn/d1_cn_tools/d1_cn_approve_node/
+
+

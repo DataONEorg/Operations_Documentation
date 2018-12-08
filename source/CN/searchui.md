@@ -1,4 +1,4 @@
-# Search UI
+# Upgrading the Search UI
 
 ![Search UI screenshot](images/metacatui-dataone-1000w.png)
 
