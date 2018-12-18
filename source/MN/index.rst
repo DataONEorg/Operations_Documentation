@@ -26,7 +26,15 @@ question via the `Contact Us`_ form.
 .. _Member Node Description Document: http://www.dataone.org/sites/all/documents/Member_Node_Description_Form_2012Jun20_Formatted.docx
 
 
-**Contents**
+**Member Node Operations**
+
+.. toctree::
+   :maxdepth: 1
+   
+   mn_custom_properties
+
+
+**Member Node Deployment**
 
 .. toctree::
    :maxdepth: 1
