@@ -43,35 +43,35 @@ When upgrading the SearchUI software for each environment, it will be installed 
 
 4. Open the ` metacatui-2.12.0/src/index.html` file in a text editor and change the `appConfigPath` variable towards the beginning of the HTML file to match the location where the DataONE MetacatUI theme config file will be deployed.
 
-#### Production
+    ##### Production Config
 
-For production, this will be in the `themes` directory included in MetacatUI:
+    For production, this will be in the `themes` directory included in MetacatUI:
 
-     ```html
-     ...
-     <script type="text/javascript">
-       // The path to your configuration file for MetacatUI. This can be any web-accessible location.
-       var appConfigPath = "/js/themes/dataone/config.js";
-     </script>
-     ...
-     ```
+         ```
+         ...
+         <script type="text/javascript">
+           // The path to your configuration file for MetacatUI. This can be any web-accessible location.
+           var appConfigPath = "/js/themes/dataone/config.js";
+         </script>
+         ...
+         ```
 
-#### Development
+    ##### Development Config
 
-Config files for development environments are not released in the MetacatUI repository, but instead are maintained in a separate `metacatui-config` repository here: https://github.nceas.ucsb.edu/walker/metacatui-config
+    Config files for development environments are not released in the MetacatUI repository, but instead are maintained in a separate `metacatui-config` repository here: https://github.nceas.ucsb.edu/walker/metacatui-config
 
-Each CN development environment will have a config file in that repository. Download the corresponding config file and deploy to the `DocumentRoot` configured for the virtual host. Set the `appConfigPath` to that root path:
+    Each CN development environment will have a config file in that repository. Download the corresponding config file and deploy to the `DocumentRoot` configured for the virtual host. Set the `appConfigPath` to that root path:
 
-     ```html
-     ...
-     <script type="text/javascript">
-       // The path to your configuration file for MetacatUI. This can be any web-accessible location.
-       var appConfigPath = "/config.js";
-     </script>
-     ...
-     ```
+         ```
+         ...
+         <script type="text/javascript">
+           // The path to your configuration file for MetacatUI. This can be any web-accessible location.
+           var appConfigPath = "/config.js";
+         </script>
+         ...
+         ```
 
-See the MetacatUI documentation for more detailed instructions and for customization options: https://nceas.github.io/metacatui/
+    See the MetacatUI documentation for more detailed instructions and for customization options: https://nceas.github.io/metacatui/
 
 5. Move the new search UI files to the root directory where web files are served.
 
