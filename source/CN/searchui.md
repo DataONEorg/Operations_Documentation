@@ -31,14 +31,14 @@ When upgrading the SearchUI software for each environment, it will be installed 
 
 2. In the `scripts` directory, run the upgrade script
 
-    ** For production: ** Run the `upgrade.sh` script and send the MetacatUI version via the `-v` flag and the deployment name (`dataone`) via the `-d` flag.
+    **For production:** Run the `upgrade.sh` script and send the MetacatUI version via the `-v` flag and the deployment name (`dataone`) via the `-d` flag.
 
     ```bash
     cd metacatui-config/scripts/
     bash upgrade.sh -v 2.12.0 -d dataone
     ```
 
-    ** For development environments: ** Run the `upgrade-test-dataone.sh` script and send the MetacatUI version via the `-v` flag. This script upgrades all of the test DataONE search UIs. 
+    **For development environments:** Run the `upgrade-test-dataone.sh` script and send the MetacatUI version via the `-v` flag. This script upgrades all of the test DataONE search UIs. 
 
     ```bash
     cd metacatui-config/scripts
