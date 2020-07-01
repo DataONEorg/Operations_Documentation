@@ -21,7 +21,32 @@ This machine is configured to host the following virtual hosts:
 
 When upgrading the SearchUI software for each environment, it will be installed in the appropriate `DocumentRoot` configured for the virtual host.
 
-## Upgrade steps
+## Upgrade steps - Scripted upgrade
+
+1. Clone the `metacatui-config` repository to your home directory on the Search UI machine
+
+    ```bash
+    git clone https://github.nceas.ucsb.edu/walker/metacatui-config.git
+    ```
+
+2. In the `scripts` directory, run the upgrade script
+
+    ** For production: ** Run the `upgrade.sh` script and send the MetacatUI version via the `-v` flag and the deployment name (`dataone`) via the `-d` flag.
+
+    ```bash
+    cd metacatui-config/scripts/
+    bash upgrade.sh -v 2.12.0 -d dataone
+    ```
+
+    ** For development environments: ** Run the `upgrade-test-dataone.sh` script and send the MetacatUI version via the `-v` flag. This script upgrades all of the test DataONE search UIs. 
+
+    ```bash
+    cd metacatui-config/scripts
+    bash upgrade-test-dataone.sh -v 2.12.0
+    ```
+
+
+## Upgrade steps - Manual upgrade
 
 1. Download the latest version of MetacatUI from https://github.com/NCEAS/metacatui/releases
 
