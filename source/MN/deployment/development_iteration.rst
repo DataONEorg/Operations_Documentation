@@ -44,7 +44,17 @@ System Metadata
 
 Each object (:term:`Science Data`, :term:`Science Metadata`, or :term:`Resource Map`\ s) that is exposed to the DataONE system via ``MNRead.listObjects()`` must have an accompanying :term:`System Metadata` document. These documents provide basic information for access, synchronization, replication, and versioning of content. MN operators will need to either store or generate System Metadata.
 
-One notable component of System Metadata is the formatId_ field. To support as many repository systems and object types as possible, DataONE assigns format information to objects according to an extensible list of object formats. The Object Format List holds a list of types akin to MIME types and file formats. The `definitive list`_ is found on the production CNs. When a new MN, holding a new type of object, joins DataONE, the new Object Formats should be added to the Object Format List before they are used in the System Metadata formatID field. DataONE has been involved in the `Unified Digital Format Registry`_ project to establish a comprehensive registry of formats, and development is ongoing. When MN objects are synchronized, objects that are tagged in the Object Format List as holding metadata (i.e. Science Metadata), will be parsed and indexed on the CN for search and discovery services. The automatic parsing and indexing is not supported for all types of objects that contain Science Metadata. For objects that are not currently supported, MN developers should coordinate with the DataONE developers to provide mappings between metadata fields and fields in DataONE's search index. See the `Content Discovery`_ documentation for details.
+One notable component of System Metadata is the formatId_ field. To support as many repository systems and object types as possible, DataONE assigns format information to objects according to an extensible list of object formats. The Object Format List holds a list of types akin to MIME types and file formats. The `definitive list`_ is found on the production CNs.
+
+When a new MN, holding a new type of object, joins DataONE, the new Object Formats should be added to the Object Format List before they are used in the System Metadata formatID field. DataONE has been involved in the `Unified Digital Format Registry`_ project to establish a comprehensive registry of formats, and development is ongoing. DataONE currently recognizes over `135 Object Formats`_. There are three main steps to registering a new format with DataONE:
+
+1. Add the schema for the new format to `the Metacat repository`_. Instructions for how to complete this step are available in the `Metacat documentation`_.
+
+2. Add the new format identifier to the `DataONE Object Formats repository`_. See the `Contributing section`_ of the repository's README for further information on how to add the new format.
+
+3. If needed, create an Apache rewrite rule to redirect from `purl.dataone.org`_ to the object schema. For instructions, see the README in the `DataONE PURL repository`_.
+
+When MN objects are synchronized, objects that are tagged in the Object Format List as holding metadata (i.e. Science Metadata), will be parsed and indexed on the CN for search and discovery services. The automatic parsing and indexing is not supported for all types of objects that contain Science Metadata. For objects that are not currently supported, MN developers should coordinate with the DataONE developers to provide mappings between metadata fields and fields in DataONE's search index. See the `Content Discovery`_ documentation for details.
 
 .. _`Content Discovery`:
      http://mule1.dataone.org/ArchitectureDocs-current/design/SearchMetadata.html
@@ -56,6 +66,26 @@ One notable component of System Metadata is the formatId_ field. To support as m
 .. _formatId:
      http://mule1.dataone.org/ArchitectureDocs-current/apis/Types.html#Types.ObjectFormatIdentifier
 
+.. _`135 registered object formats`:
+     https://cn.dataone.org/cn/v2/formats
+
+.. _`the Metacat repository`:
+     https://github.com/NCEAS/Metacat
+
+.. _`Metacat documentation`:
+     https://github.com/NCEAS/metacat/issues/1473
+
+.. _`DataONE Object Formats repository`:
+     https://github.com/DataONEorg/object-formats
+
+.. _`Contributing section`:
+     https://github.com/DataONEorg/object-formats#contributing
+
+.. _`purl.dataone.org`:
+     https://purl.dataone.org
+
+.. _`DataONE PURL repository`:
+     https://github.com/DataONEorg/dataone_purl
 
 Content versioning
 ~~~~~~~~~~~~~~~~~~
@@ -76,7 +106,7 @@ Since one of the main goals of DataONE is to provide a preservation network with
 Data packaging
 ~~~~~~~~~~~~~~
 
-Scientists often work with separate objects (files) containing data and metadata, and want to access them as a collection. However, communities use different packaging technologies that are often specific to their data types. To support collections across a federated network, DataONE chose to represent data packages using the :term:`OAI-ORE` specification. Also known as :term:`Resource Map`\ s, these documents use :term:`RDF` to describe relationships among objects (resources). DataONE has chosen a limited vocabulary to represent associations between objects. Curently, the associations are:
+Scientists often work with separate objects (files) containing data and metadata, and want to access them as a collection. However, communities use different packaging technologies that are often specific to their data types. To support collections across a federated network, DataONE chose to represent data packages using the :term:`OAI-ORE` specification. Also known as :term:`Resource Map`\ s, these documents use :term:`RDF` to describe relationships among objects (resources). DataONE has chosen a limited vocabulary to represent associations between objects. Currently, the associations are:
 
 * describes / describedBy
 * aggregates / isAggregatedBy
